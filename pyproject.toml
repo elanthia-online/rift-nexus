@@ -1,0 +1,28 @@
+[project]
+name = "rift-nexus"
+version = "0.1.0"
+description = "Ground-up Python reimplementation of lich-5 ecosystem functionality for GemStone IV / DragonRealms"
+readme = "README.md"
+requires-python = ">=3.14"
+license = { text = "MIT" }
+dependencies = [
+    "PySide6",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+# Explicit testpaths/rootdir so pytest's config discovery can't walk up and
+# pick up a pytest.ini, tox.ini, or setup.cfg living outside this repo.
+testpaths = ["tests"]
+pythonpath = ["src"]
