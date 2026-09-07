@@ -14,6 +14,7 @@ Current task list: @TASKS.md
 - `engine` and `login` are mutually independent; `client` depends on both being functional. Respect this order unless `docs/decisions.md` is updated to reflect a deliberate change.
 - This is a rebuild, not a port. Never treat Ruby source (`lich-5`, `scripts`, `dr-scripts`) as executable reference or a conformance target — Python cannot run Ruby. Ruby source is read-only research input for API design (usage-frequency analysis), nothing more.
 - Update @TASKS.md checkboxes as work completes. Log any nontrivial architectural or naming decision in @docs/decisions.md rather than only in commit messages.
+- Files end with a single trailing newline (enforced via `.editorconfig`). Markdown/prose is not hard-wrapped at a fixed column — let paragraphs run long; wrap only at real semantic breaks (list items, headers, code blocks).
 
 ## Licensing & attribution
 
