@@ -7,12 +7,18 @@ requires-python = ">=3.14"
 license = { text = "MIT" }
 dependencies = [
     "PySide6",
+    "keyring",
 ]
 
 [project.optional-dependencies]
 dev = [
     "pytest",
+    "pytest-qt",
 ]
+
+[project.scripts]
+rift-login = "rift.login.app:main"
+rift-client = "rift.client.app:main"
 
 [build-system]
 requires = ["setuptools>=68"]
@@ -20,6 +26,9 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools.package-data]
+"rift.login" = ["simu.pem"]
 
 [tool.pytest.ini_options]
 # Explicit testpaths/rootdir so pytest's config discovery can't walk up and

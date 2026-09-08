@@ -44,14 +44,17 @@ Checkboxes render as tickable in GitHub's file view — this doubles as a lightw
 
 ## login
 
-- [ ] EAS protocol reference doc
-- [ ] Auth flow implementation
-- [ ] PySide6 UI: character/server selection
-- [ ] Session handoff to `client`
+- [X] EAS protocol reference doc (`docs/eas-protocol.md`)
+- [X] SAL format reference doc (`docs/sal-format.md`)
+- [X] Auth flow implementation (`eas_wire.py`, `eas_client.py`, `tls_transport.py`, `cert_pinning.py` — tested)
+- [X] PySide6 UI: character/server selection (`ui.py`'s `LoginWindow` — tested)
+- [X] Session handoff to `client` (`worker.py` → `sal.py` → `launcher.py` — tested)
 
 ## client
 
 - [ ] Wrayth UX reference notes (what parity actually means, concretely)
 - [ ] Urnon / ProfanityFE study notes — approach only, no code reuse (see CLAUDE.md licensing policy)
-- [ ] PySide6 shell + connection to `login` session
-- [ ] Render loop consuming `protocol` events
+- [X] PySide6 shell + connection to `login` session (`window.py`/`app.py`/`sal_reader.py` consume the SAL handoff file — tested)
+- [ ] Render loop consuming `protocol` events (blocked on `protocol` package; `stream_worker.py` currently pipes raw text through `display_filter.py`'s regex stripper as a stopgap)
+- [x] `display_filter.py`: squelch repeated `<prompt time="...">` bursts (2026-09-07 — see `docs/decisions.md`)
+- [ ] `protocol`: real round-timer tracking from `<prompt time="...">` (raw data still captured in session logs; not lost, just not consumed yet)

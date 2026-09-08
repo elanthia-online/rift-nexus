@@ -27,8 +27,11 @@ pip install -e ".[dev]"
 pytest
 ```
 
+For running the real `login` → `client` chain against a live account (not just the automated test suite), see [docs/usage.md](docs/usage.md).
+
 ## Documentation
 
+- [docs/usage.md](docs/usage.md) — manual usage: running `login` and `client` against a live account
 - [docs/architecture.md](docs/architecture.md) — architecture, package boundaries, dependency graph
 - [docs/decisions.md](docs/decisions.md) — design decisions and rationale
 - [TASKS.md](TASKS.md) — current task list

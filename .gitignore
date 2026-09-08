@@ -5,3 +5,21 @@ __pycache__/
 *.egg-info/
 build/
 dist/
+
+# rift-nexus: real config/cache/secrets belong under ~/.config/rift-nexus/
+# and $XDG_RUNTIME_DIR, never inside the repo. Defensive only.
+*.sal
+.rift-nexus/
+rift-nexus-config.json
+*.session-key
+
+# Local-only data collection: real recorded game session logs used as
+# protocol/tag-grammar research input. Contains account-identifying data
+# (character names, real connection details) - never committed.
+/local/
+
+# Claude Code local state - no shared config (commands, agents, etc.)
+# lives here yet, and CLAUDE.md at the repo root is sufficient for now.
+# Revisit if the .claude/ directory ever gains something meant to be
+# shared/committed.
+.claude/
